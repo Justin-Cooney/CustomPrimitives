@@ -9,7 +9,6 @@
 
   <PropertyGroup>
     <PackageId>CustomPrimitives.Analyzer</PackageId>
-    <PackageVersion>1.0.0.0</PackageVersion>
     <Authors>Justin Cooney</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>CustomPrimitives.Analyzer</Description>
