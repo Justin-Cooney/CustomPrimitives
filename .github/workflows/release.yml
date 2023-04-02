@@ -26,10 +26,10 @@ jobs:
     - name: Build
       run: |
         cd src
-        dotnet build --no-restore  /p:VersionPrefix=${GITHUB_REF##*/}'
+        dotnet build --no-restore --configuration Release /p:VersionPrefix="${GITHUB_REF##*/}"'
     - name: Test
       run: |
         cd src
         dotnet test --no-build --verbosity normal
-    - name: Publish
-      run: nuget push **\*.${GITHUB_REF##*/}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+   # - name: Publish
+   #   run: nuget push **\*.${GITHUB_REF##*/}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
