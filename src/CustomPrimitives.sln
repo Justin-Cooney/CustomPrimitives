@@ -27,21 +27,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.Analyzer.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.Analyzer.Package", "CustomPrimitives.Analyzer\CustomPrimitives.Analyzer.Package\CustomPrimitives.Analyzer.Package.csproj", "{1ECE705B-CC1B-439D-8442-10AD30A19F06}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.Analyzer.Test", "CustomPrimitives.Analyzer\CustomPrimitives.Analyzer.Test\CustomPrimitives.Analyzer.Test.csproj", "{CC42A8FE-3B12-4DD2-AB3F-A740490B0DA6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.Analyzer.Vsix", "CustomPrimitives.Analyzer\CustomPrimitives.Analyzer.Vsix\CustomPrimitives.Analyzer.Vsix.csproj", "{398E85DA-A14A-4215-ADF8-969ADA2F77B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzer", "Analyzer", "{A337403E-14BA-4B27-9040-393D0C7FD17C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomPrimitives.AspNetCore", "CustomPrimitives.AspNetCore\CustomPrimitives.AspNetCore.csproj", "{ABFCB4A9-3C57-4DE3-A520-DF23CD5A80AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.AspNetCore", "CustomPrimitives.AspNetCore\CustomPrimitives.AspNetCore.csproj", "{ABFCB4A9-3C57-4DE3-A520-DF23CD5A80AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomPrimitives.AspNetCore.Tests.WebApi", "CustomPrimitives.AspNetCore.Tests.WebApi\CustomPrimitives.AspNetCore.Tests.WebApi.csproj", "{983A07DB-ACCA-4751-9150-C4F653209520}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.AspNetCore.Tests.WebApi", "CustomPrimitives.AspNetCore.Tests.WebApi\CustomPrimitives.AspNetCore.Tests.WebApi.csproj", "{983A07DB-ACCA-4751-9150-C4F653209520}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomPrimitives.AspNetCore.Tests", "CustomPrimitives.AspNetCore.Tests\CustomPrimitives.AspNetCore.Tests.csproj", "{623626A3-327C-470E-96D1-8242635F0A59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.AspNetCore.Tests", "CustomPrimitives.AspNetCore.Tests\CustomPrimitives.AspNetCore.Tests.csproj", "{623626A3-327C-470E-96D1-8242635F0A59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomPrimitives.FluentValidation.AspNetCore.Tests.WebApi", "CustomPrimitives.FluentValidation.AspNetCore.Tests.WebApi\CustomPrimitives.FluentValidation.AspNetCore.Tests.WebApi.csproj", "{570172D9-6B93-4A30-A61C-E97D76791AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.FluentValidation.AspNetCore.Tests.WebApi", "CustomPrimitives.FluentValidation.AspNetCore.Tests.WebApi\CustomPrimitives.FluentValidation.AspNetCore.Tests.WebApi.csproj", "{570172D9-6B93-4A30-A61C-E97D76791AF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomPrimitives.FluentValidation.AspNetCore.Tests", "CustomPrimitives.FluentValidation.AspNetCore.Tests\CustomPrimitives.FluentValidation.AspNetCore.Tests.csproj", "{CBC71B12-C89B-4B57-AB93-F65953C70139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomPrimitives.FluentValidation.AspNetCore.Tests", "CustomPrimitives.FluentValidation.AspNetCore.Tests\CustomPrimitives.FluentValidation.AspNetCore.Tests.csproj", "{CBC71B12-C89B-4B57-AB93-F65953C70139}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,10 +91,6 @@ Global
 		{1ECE705B-CC1B-439D-8442-10AD30A19F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ECE705B-CC1B-439D-8442-10AD30A19F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ECE705B-CC1B-439D-8442-10AD30A19F06}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC42A8FE-3B12-4DD2-AB3F-A740490B0DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC42A8FE-3B12-4DD2-AB3F-A740490B0DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC42A8FE-3B12-4DD2-AB3F-A740490B0DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC42A8FE-3B12-4DD2-AB3F-A740490B0DA6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{398E85DA-A14A-4215-ADF8-969ADA2F77B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{398E85DA-A14A-4215-ADF8-969ADA2F77B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{398E85DA-A14A-4215-ADF8-969ADA2F77B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -133,7 +127,6 @@ Global
 		{A7A6D0AF-406F-4C42-B7F7-800ED75EA424} = {A337403E-14BA-4B27-9040-393D0C7FD17C}
 		{CBC7CB4A-5BEE-4E9F-AF07-71A0C40A2969} = {A337403E-14BA-4B27-9040-393D0C7FD17C}
 		{1ECE705B-CC1B-439D-8442-10AD30A19F06} = {A337403E-14BA-4B27-9040-393D0C7FD17C}
-		{CC42A8FE-3B12-4DD2-AB3F-A740490B0DA6} = {A337403E-14BA-4B27-9040-393D0C7FD17C}
 		{398E85DA-A14A-4215-ADF8-969ADA2F77B7} = {A337403E-14BA-4B27-9040-393D0C7FD17C}
 		{983A07DB-ACCA-4751-9150-C4F653209520} = {4261ECFF-FDBD-4B04-9B7D-6D70400B60D6}
 		{623626A3-327C-470E-96D1-8242635F0A59} = {4261ECFF-FDBD-4B04-9B7D-6D70400B60D6}
