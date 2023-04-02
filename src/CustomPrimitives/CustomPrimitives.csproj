@@ -14,9 +14,4 @@
 	<ItemGroup>
 		<PackageReference Include="System.Runtime.Experimental" Version="6.0.2" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\CustomPrimitives.Analyzer\CustomPrimitives.Analyzer.CodeFixes\CustomPrimitives.Analyzer.CodeFixes.csproj" />
-	  <ProjectReference Include="..\CustomPrimitives.Analyzer\CustomPrimitives.Analyzer\CustomPrimitives.Analyzer.csproj" />
-	</ItemGroup>
 </Project>
