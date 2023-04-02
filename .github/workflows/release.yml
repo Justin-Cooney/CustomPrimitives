@@ -15,12 +15,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set versions on packages
-      id: set-assembly-version
-      uses: secondbounce/assemblyinfo-update@v2
-      with:
-        version: "${GITHUB_REF##*/}.0"
-        directory: '.\src'
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
@@ -32,10 +26,10 @@ jobs:
     - name: Build
       run: |
         cd src
-        dotnet build --no-restore
+        dotnet build --no-restore  /p:VersionPrefix=${GITHUB_REF##*/}'
     - name: Test
       run: |
         cd src
         dotnet test --no-build --verbosity normal
-   # - name: Publish
-    #  run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+    - name: Publish
+      run: nuget push **\*.${GITHUB_REF##*/}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
