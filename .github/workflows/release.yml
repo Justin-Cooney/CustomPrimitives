@@ -15,13 +15,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Test Print
-      run: echo "Hello ${GITHUB_REF##*/}"
     - name: Set versions on packages
       id: set-assembly-version
       uses: secondbounce/assemblyinfo-update@v2
       with:
-        version: ${GITHUB_REF##*/}
+        version: "${GITHUB_REF##*/}.0"
         directory: '.\src'
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
