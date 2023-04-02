@@ -15,8 +15,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Test Print
-      run: echo "${GITHUB_REF##*/}"
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
@@ -32,6 +30,6 @@ jobs:
     - name: Test
       run: |
         cd src
-        dotnet test --no-build --verbosity normal
+        dotnet test --no-build --configuration Release --verbosity normal
    # - name: Publish
    #   run: nuget push **\*.${GITHUB_REF##*/}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
