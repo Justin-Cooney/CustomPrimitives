@@ -15,10 +15,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set env
+    - name: Get Version Number
       run: |
         echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV 
         echo "$RELEASE_VERSION"
+    - name: Set versions on packages
+      id: set-assembly-version
+      uses: secondbounce/assemblyinfo-update@v2
+      with:
+        version: '$RELEASE_VERSION'
+        directory: '.\src'
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
