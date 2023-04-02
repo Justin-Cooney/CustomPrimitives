@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Justin Cooney</Authors>
+    <Description>A collection of primitive classes used to create custom primitives in C#</Description>
+    <PackageTags>primitive;primitives;</PackageTags>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Runtime.Experimental" Version="6.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\CustomPrimitives.Analyzer\CustomPrimitives.Analyzer.CodeFixes\CustomPrimitives.Analyzer.CodeFixes.csproj" />
+	  <ProjectReference Include="..\CustomPrimitives.Analyzer\CustomPrimitives.Analyzer\CustomPrimitives.Analyzer.csproj" />
+	</ItemGroup>
+</Project>

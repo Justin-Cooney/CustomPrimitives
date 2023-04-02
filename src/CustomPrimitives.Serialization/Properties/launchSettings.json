@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "CustomPrimitives.Serialization": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:64786;http://localhost:64787"
+    }
+  }
+}

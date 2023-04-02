@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Justin Cooney</Authors>
+    <Description>Extensions for installing CustomPrimitives in an AspNetCore WebApi project.</Description>
+  </PropertyGroup>
+
+<ItemGroup>
+	<FrameworkReference Include="Microsoft.AspNetCore.App" />
+</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomPrimitives.Serialization\CustomPrimitives.Serialization.csproj" />
+  </ItemGroup>
+
+</Project>
