@@ -31,5 +31,5 @@ jobs:
       run: |
         cd src
         dotnet test --no-build --configuration Release --verbosity normal
-   # - name: Publish
-   #   run: nuget push **\*.${GITHUB_REF##*/}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
+    - name: Publish
+      run: nuget push **\*.${GITHUB_REF##*/}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
