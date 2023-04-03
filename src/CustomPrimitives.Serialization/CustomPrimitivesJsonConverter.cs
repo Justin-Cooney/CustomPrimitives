@@ -4,17 +4,17 @@ using System.Text.Json;
 
 namespace CustomPrimitives.Serialization;
 
-public class CustomPrimitivesJsonConverter<PrimitiveType, T> : JsonConverter<PrimitiveType>
-	where PrimitiveType : IPrimitive<T>
+public class CustomPrimitivesJsonConverter<TCustom, TPrimitive> : JsonConverter<TCustom>
+	where TCustom : IPrimitive<TPrimitive>
 {
 	public CustomPrimitivesJsonConverter() { }
 
-	public override PrimitiveType? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	public override TCustom? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
 	{
-		var valueConverter = (JsonConverter<T>)options.GetConverter(typeof(T));
+		var valueConverter = (JsonConverter<TPrimitive>)options.GetConverter(typeof(TPrimitive));
 		var value = valueConverter.Read(ref reader, typeToConvert, options);
 
-		var primitive = (PrimitiveType)Activator.CreateInstance(typeof(PrimitiveType), BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, new object[] { value }, null);
+		var primitive = (TCustom)Activator.CreateInstance(typeof(TCustom), BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, new object[] { value }, null);
 		Type type = primitive.GetType();
 		PropertyInfo prop = type.BaseType.GetProperty("Value");
 		prop.SetValue(primitive, value, null);
@@ -22,8 +22,8 @@ public class CustomPrimitivesJsonConverter<PrimitiveType, T> : JsonConverter<Pri
 		return primitive;
 	}
 
-	public override void Write(Utf8JsonWriter writer, PrimitiveType value, JsonSerializerOptions options)
+	public override void Write(Utf8JsonWriter writer, TCustom value, JsonSerializerOptions options)
 	{
-		((JsonConverter<T>)options.GetConverter(typeof(T))).Write(writer, value.Value, options);
+		((JsonConverter<TPrimitive>)options.GetConverter(typeof(TPrimitive))).Write(writer, value.Value, options);
 	}
 }

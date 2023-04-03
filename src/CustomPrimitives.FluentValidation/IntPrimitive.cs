@@ -1,13 +1,12 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using Functional;
-using System.Reflection;
 
 namespace CustomPrimitives.FluentValidation;
 
-public abstract class IntPrimitive<PrimitiveType, TValidator> : IntPrimitive<PrimitiveType>, IValidatePrimitive<PrimitiveType, TValidator>
-	where PrimitiveType : IntPrimitive<PrimitiveType>
-	where TValidator : IValidator<PrimitiveType>, new ()
+public abstract class IntPrimitive<TCustom, TValidator> : IntPrimitive<TCustom>, IValidationPrimitive<TCustom, TValidator, int>
+	where TCustom : IntPrimitive<TCustom>
+	where TValidator : IValidator<TCustom>, new ()
 {
 	private static TValidator _validator => new TValidator();
 
@@ -15,17 +14,10 @@ public abstract class IntPrimitive<PrimitiveType, TValidator> : IntPrimitive<Pri
 	{
 	}
 
-	protected static Result<PrimitiveType, ValidationResult> CreateWithValidation(PrimitiveType value)
-	{
-		var validationResult = Validate(value);
-		return Result.Create(validationResult.IsValid, value, validationResult);
-	}
+	public static ValidationResult Validate(TCustom value) => _validator.Validate(value);
 
-	public static ValidationResult Validate(PrimitiveType value) => _validator.Validate(value);
+	protected static Result<TCustom, ValidationResult> TryValidate(TCustom value) => IValidationPrimitive<TCustom, TValidator, int>.TryValidate(value);
 
-	public static Result<PrimitiveType, ValidationResult> Create(int value)
-	{
-		var obj = (PrimitiveType) Activator.CreateInstance(typeof(PrimitiveType), BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, new object[] { value }, null);
-		return CreateWithValidation(obj);
-	}
+	public static Result<TCustom, ValidationResult> Create(int value) => IValidationPrimitive<TCustom, TValidator, int>.Create(value);
+}
 }
