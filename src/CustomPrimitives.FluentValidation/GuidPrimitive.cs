@@ -20,4 +20,3 @@ public abstract class GuidPrimitive<TCustom, TValidator> : GuidPrimitive<TCustom
 
 	public static Result<TCustom, ValidationResult> Create(Guid value) => IValidationPrimitive<TCustom, TValidator, Guid>.Create(value);
 }
-}

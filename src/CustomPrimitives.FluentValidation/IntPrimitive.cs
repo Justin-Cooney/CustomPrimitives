@@ -20,4 +20,3 @@ public abstract class IntPrimitive<TCustom, TValidator> : IntPrimitive<TCustom>,
 
 	public static Result<TCustom, ValidationResult> Create(int value) => IValidationPrimitive<TCustom, TValidator, int>.Create(value);
 }
-}

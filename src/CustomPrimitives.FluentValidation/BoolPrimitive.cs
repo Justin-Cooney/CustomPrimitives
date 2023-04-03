@@ -20,4 +20,3 @@ public abstract class BoolPrimitive<TCustom, TValidator> : BoolPrimitive<TCustom
 
 	public static Result<TCustom, ValidationResult> Create(bool value) => IValidationPrimitive<TCustom, TValidator, bool>.Create(value);
 }
-}
